@@ -4,75 +4,244 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mouad ALAOUI MHAMMEDI | Portfolio</title>
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background: #f4f7f6; }
-        header { background: #1a2a6c; color: white; padding: 40px 20px; text-align: center; border-radius: 8px; margin-bottom: 20px; }
-        .card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        h2 { color: #1a2a6c; border-bottom: 2px solid #1a2a6c; padding-bottom: 5px; }
-        .tag { display: inline-block; background: #e0e7ff; color: #4338ca; padding: 5px 12px; border-radius: 15px; font-size: 0.8em; margin: 3px; font-weight: bold; }
-        .contact { text-align: center; margin-top: 40px; }
-        .btn { background: #1a2a6c; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .lang-content { display: none; }
+        .active-lang { display: block; }
+        .glass { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
+        .profile-img { object-fit: cover; border: 4px solid rgba(255, 255, 255, 0.2); }
     </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800">
 
-<header>
-    <h1>Mouad ALAOUI MHAMMEDI</h1>
-    <p>Software Engineer | AI Researcher | QA Automation Specialist</p>
-</header>
+    <!-- Language & Navigation Toggle -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="font-bold text-xl text-blue-600">MA.</span>
+            <div class="flex gap-4">
+                <button onclick="setLanguage('en')" id="btn-en" class="px-3 py-1 rounded-full text-sm font-semibold transition bg-blue-600 text-white">EN</button>
+                <button onclick="setLanguage('fr')" id="btn-fr" class="px-3 py-1 rounded-full text-sm font-semibold transition bg-slate-200 text-slate-600">FR</button>
+            </div>
+        </div>
+    </nav>
 
-<div class="card">
-    <h2>👨‍💻 Professional Summary</h2>
-    [span_4](start_span)<p>Engineer in Software Development and Management currently pursuing a PhD specializing in AI and Deep Learning for Image Modeling[span_4](end_span). [span_5](start_span)[span_6](start_span)I have proven experience in managing software projects from design to implementation and expertise in analyzing complex systems[span_5](end_span)[span_6](end_span).</p>
-</div>
+    <!-- Header Section -->
+    <header class="pt-32 pb-16 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 text-white">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <!-- Profile Image Container -->
+            <div class="mb-6 flex justify-center">
+                <div class="relative w-32 h-32 md:w-40 md:h-40">
+                    <img src="profile.jpg" alt="Mouad ALAOUI MHAMMEDI" class="profile-img w-full h-full rounded-full shadow-2xl bg-slate-700" onerror="this.src='https://ui-avatars.com/api/?name=Mouad+Alaoui&background=2563eb&color=fff&size=256'">
+                </div>
+            </div>
 
-<div class="card">
-    <h2>🛠 Technical Skills</h2>
-    <div>
-        <strong>Languages:</strong> 
-        [span_7](start_span)<span class="tag">PHP (Symfony)</span> <span class="tag">Python</span> <span class="tag">C++</span> <span class="tag">C#</span> <span class="tag">JavaScript</span>[span_7](end_span)
-    </div>
-    <div style="margin-top:10px;">
-        <strong>QA & Automation:</strong> 
-        [span_8](start_span)[span_9](start_span)<span class="tag">Selenium</span> <span class="tag">Playwright</span> <span class="tag">Robot Framework</span> <span class="tag">Appium</span> <span class="tag">ISTQB Certified</span>[span_8](end_span)[span_9](end_span)
-    </div>
-</div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Mouad ALAOUI MHAMMEDI</h1>
+            
+            <div id="en-hero" class="lang-content active-lang">
+                <p class="text-xl md:text-2xl text-blue-300 font-light mb-8">Software Engineer | AI Researcher | QA Automation</p>
+                <p class="max-w-2xl mx-auto text-slate-300 italic">👋 Bridging the gap between robust software engineering and cutting-edge Artificial Intelligence.</p>
+            </div>
 
-<div class="card">
-    <h2>💼 Experience</h2>
-    <p><strong>Software Engineer & QA Tester</strong> | [span_10](start_span)DIOT-SIACI Group (2023 - Present)[span_10](end_span)</p>
-    <ul>
-        [span_11](start_span)<li>Developed high-performance Symfony web applications using MVC architecture[span_11](end_span).</li>
-        [span_12](start_span)<li>Implemented automated testing suites with Selenium and Robot Framework[span_12](end_span).</li>
-        [span_13](start_span)<li>Integrated CI/CD pipelines via GitLab CI and GitHub Actions[span_13](end_span).</li>
-    </ul>
-    <p><strong>Software Engineer</strong> | [span_14](start_span)JESA Group (Feb - Jun 2023)[span_14](end_span)</p>
-    <ul>
-        [span_15](start_span)<li>Designed a web tool for data management and project resource estimation[span_15](end_span).</li>
-    </ul>
-</div>
+            <div id="fr-hero" class="lang-content">
+                <p class="text-xl md:text-2xl text-blue-300 font-light mb-8">Ingénieur Logiciel | Chercheur en IA | Automatisation QA</p>
+                <p class="max-w-2xl mx-auto text-slate-300 italic">👋 Faire le pont entre l'ingénierie logicielle robuste et l'IA de pointe.</p>
+            </div>
 
-<div class="card">
-    <h2>🚀 Research & Projects</h2>
-    <ul>
-        [span_16](start_span)<li><strong>AI Deep Learning Pipeline:</strong> Developed for DNA damage quantification (Comet assay) in <em>Crocus sativus</em> research[span_16](end_span).</li>
-        [span_17](start_span)<li><strong>Customer Loyalty System:</strong> Created a desktop application using .NET and SQL Server[span_17](end_span).</li>
-        [span_18](start_span)<li><strong>Publication:</strong> "DFT and Docking Techniques: Bibliometric Analysis" (2025)[span_18](end_span).</li>
-    </ul>
-</div>
+            <div class="mt-10 flex justify-center gap-4">
+                <a href="mailto:mouadalaoui485@gmail.com" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold transition flex items-center gap-2">
+                    <i data-lucide="mail" class="w-5 h-5"></i> <span class="lang-content active-lang en">Contact Me</span><span class="lang-content fr">Me Contacter</span>
+                </a>
+                <a href="https://www.linkedin.com/in/mouad-alaoui-mhammedi/" target="_blank" class="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg font-semibold transition flex items-center gap-2">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </header>
 
-<div class="card">
-    <h2>🎓 Education</h2>
-    <ul>
-        [span_19](start_span)<li><strong>PhD in AI Application to Modeling:</strong> Faculty of Sciences, Oujda (Ongoing)[span_19](end_span).</li>
-        [span_20](start_span)<li><strong>State Engineer Degree:</strong> Computer Science & Management (2023)[span_20](end_span).</li>
-    </ul>
-</div>
+    <main class="max-w-5xl mx-auto px-6 py-12 space-y-20">
 
-<div class="contact">
-    <p>📫 mouadalaoui485@gmail.com</p>
-    <a href="https://www.linkedin.com/in/mouad-alaoui-mhammedi/" class="btn">Connect on LinkedIn</a>
-</div>
+        <!-- About Me -->
+        <section id="about">
+            <div class="lang-content active-lang en">
+                <h2 class="text-3xl font-bold mb-6 flex items-center gap-3"><i data-lucide="user" class="text-blue-600"></i> About Me</h2>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                    <p class="text-lg text-slate-600 leading-relaxed">
+                        I am a Software Engineer and current PhD candidate with a passion for transforming complex data into actionable insights. 
+                        My journey began with a deep dive into Computer Science and Management, which evolved into a career focused on building scalable web applications and ensuring their excellence through rigorous automated testing. 
+                        Currently, my research focuses on the intersection of Deep Learning and Image Modeling at the Laboratory of Applied Mathematics of the Oriental.
+                    </p>
+                </div>
+            </div>
+            <div class="lang-content fr">
+                <h2 class="text-3xl font-bold mb-6 flex items-center gap-3"><i data-lucide="user" class="text-blue-600"></i> À Propos</h2>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                    <p class="text-lg text-slate-600 leading-relaxed">
+                        Ingénieur en Développement Informatique et Gestion actuellement doctorant spécialisé en IA et Deep Learning. 
+                        Mon parcours a débuté par une immersion profonde en informatique et en gestion, évoluant vers une carrière axée sur la création d'applications web évolutives et l'assurance de leur excellence via des tests automatisés rigoureux. 
+                        Mes recherches actuelles portent sur l'intersection du Deep Learning et de la modélisation d'images.
+                    </p>
+                </div>
+            </div>
+        </section>
 
+        <!-- Core Skills -->
+        <section id="skills">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                <i data-lucide="code" class="text-blue-600"></i> 
+                <span class="lang-content active-lang en">Core Skills</span><span class="lang-content fr">Compétences Clés</span>
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Development -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                    <h3 class="font-bold text-blue-600 mb-4">Development</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-100 rounded text-sm">PHP (Symfony)</span>
+                        <span class="px-3 py-1 bg-slate-100 rounded text-sm">Python</span>
+                        <span class="px-3 py-1 bg-slate-100 rounded text-sm">C# / .NET</span>
+                        <span class="px-3 py-1 bg-slate-100 rounded text-sm">C++</span>
+                        <span class="px-3 py-1 bg-slate-100 rounded text-sm">JavaScript</span>
+                        <span class="px-3 py-1 bg-slate-100 rounded text-sm">SQL</span>
+                    </div>
+                </div>
+                <!-- QA & Automation -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                    <h3 class="font-bold text-blue-600 mb-4">QA & Automation</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm">Selenium</span>
+                        <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm">Playwright</span>
+                        <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm">Robot Framework</span>
+                        <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm">Appium</span>
+                        <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm">RPA (A360)</span>
+                    </div>
+                </div>
+                <!-- Tools -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                    <h3 class="font-bold text-blue-600 mb-4">Tools & DevOps</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-100 rounded text-sm">Docker</span>
+                        <span class="px-3 py-1 bg-slate-100 rounded text-sm">GitLab CI</span>
+                        <span class="px-3 py-1 bg-slate-100 rounded text-sm">GitHub Actions</span>
+                        <span class="px-3 py-1 bg-slate-100 rounded text-sm">Figma</span>
+                        <span class="px-3 py-1 bg-slate-100 rounded text-sm">Jira Xray</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                <i data-lucide="briefcase" class="text-blue-600"></i>
+                <span class="lang-content active-lang en">Professional Experience</span><span class="lang-content fr">Expérience Professionnelle</span>
+            </h2>
+            <div class="space-y-8">
+                <!-- Diot Siaci -->
+                <div class="relative pl-8 border-l-2 border-slate-200">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-blue-600 rounded-full"></div>
+                    <div class="mb-1 text-sm font-bold text-blue-600">2023 - PRESENT</div>
+                    <h3 class="text-xl font-bold">Software Engineer & QA Tester</h3>
+                    <div class="text-slate-500 font-semibold mb-4">DIOT-SIACI Group</div>
+                    <div class="lang-content active-lang en text-slate-600 space-y-2">
+                        <p>• Developing high-performance web applications using Symfony (MVC, Twig, Doctrine).</p>
+                        <p>• Designing and executing automated testing suites with Selenium, Playwright, and Robot Framework.</p>
+                        <p>• Integrating automated tests into CI/CD pipelines via GitLab CI.</p>
+                    </div>
+                    <div class="lang-content fr text-slate-600 space-y-2">
+                        <p>• Développement d'applications web haute performance via Symfony.</p>
+                        <p>• Conception et exécution de suites de tests automatisés (Selenium, Playwright, Robot Framework).</p>
+                        <p>• Intégration des tests automatisés dans les pipelines CI/CD via GitLab CI.</p>
+                    </div>
+                </div>
+
+                <!-- JESA -->
+                <div class="relative pl-8 border-l-2 border-slate-200">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-slate-300 rounded-full"></div>
+                    <div class="mb-1 text-sm font-bold text-slate-400">FEB - JUN 2023</div>
+                    <h3 class="text-xl font-bold">Software Engineer Intern</h3>
+                    <div class="text-slate-500 font-semibold mb-4">JESA Group</div>
+                    <div class="lang-content active-lang en text-slate-600">
+                        <p>Designed and built a web-based project resource estimation tool to streamline cross-functional data management.</p>
+                    </div>
+                    <div class="lang-content fr text-slate-600">
+                        <p>Conception et réalisation d'un outil web d'estimation des ressources de projet pour faciliter la gestion des données.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects & Research -->
+        <section id="projects">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                <i data-lucide="flask-conical" class="text-blue-600"></i>
+                <span class="lang-content active-lang en">Research & Projects</span><span class="lang-content fr">Recherche & Projets</span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 flex flex-col">
+                    <div class="h-3 bg-blue-600"></div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-3">AI DNA Quantification</h3>
+                        <p class="text-slate-600 mb-4 lang-content active-lang en">Deep Learning pipeline for automated DNA damage quantification (Comet assay) in <i>Crocus sativus</i> research.</p>
+                        <p class="text-slate-600 mb-4 lang-content fr">Pipeline de Deep Learning pour la quantification automatisée des dommages à l'ADN dans la recherche sur le <i>Crocus sativus</i>.</p>
+                        <div class="mt-auto flex gap-2">
+                            <span class="text-xs font-bold px-2 py-1 bg-slate-100 rounded">Python</span>
+                            <span class="text-xs font-bold px-2 py-1 bg-slate-100 rounded">AI</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 flex flex-col">
+                    <div class="h-3 bg-slate-800"></div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-3">Loyalty System</h3>
+                        <p class="text-slate-600 mb-4 lang-content active-lang en">Desktop application for customer retention in supermarkets using .NET and SQL Server.</p>
+                        <p class="text-slate-600 mb-4 lang-content fr">Application de bureau pour la fidélisation des clients en supermarché utilisant .NET et SQL Server.</p>
+                        <div class="mt-auto flex gap-2">
+                            <span class="text-xs font-bold px-2 py-1 bg-slate-100 rounded">.NET</span>
+                            <span class="text-xs font-bold px-2 py-1 bg-slate-100 rounded">SQL Server</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold mb-4">Mouad ALAOUI MHAMMEDI</h2>
+            <div class="flex justify-center gap-6">
+                <a href="mailto:mouadalaoui485@gmail.com" class="hover:text-blue-400 transition"><i data-lucide="mail"></i></a>
+                <a href="https://www.linkedin.com/in/mouad-alaoui-mhammedi/" class="hover:text-blue-400 transition"><i data-lucide="linkedin"></i></a>
+                <a href="https://github.com/48Mouad" class="hover:text-blue-400 transition"><i data-lucide="github"></i></a>
+            </div>
+            <p class="mt-8 text-slate-500 text-sm">© 2024 - Built with HTML/Tailwind</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function setLanguage(lang) {
+            const allLangContent = document.querySelectorAll('.lang-content');
+            allLangContent.forEach(el => el.classList.remove('active-lang'));
+            
+            if (lang === 'en') {
+                document.querySelectorAll('.en').forEach(el => el.classList.add('active-lang'));
+                document.getElementById('en-hero').classList.add('active-lang');
+                document.getElementById('btn-en').className = "px-3 py-1 rounded-full text-sm font-semibold transition bg-blue-600 text-white";
+                document.getElementById('btn-fr').className = "px-3 py-1 rounded-full text-sm font-semibold transition bg-slate-200 text-slate-600";
+            } else {
+                document.querySelectorAll('.fr').forEach(el => el.classList.add('active-lang'));
+                document.getElementById('fr-hero').classList.add('active-lang');
+                document.getElementById('btn-fr').className = "px-3 py-1 rounded-full text-sm font-semibold transition bg-blue-600 text-white";
+                document.getElementById('btn-en').className = "px-3 py-1 rounded-full text-sm font-semibold transition bg-slate-200 text-slate-600";
+            }
+        }
+    </script>
 </body>
 </html>
+
